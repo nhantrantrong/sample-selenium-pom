@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Login Test">
+        <parameter name="username" value="incorrectUsername"></parameter>
+        <parameter name="password" value="SuperSecretPassword!"></parameter>
+        <parameter name="expectedMessage" value="Your username is invalid!"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.base.testcases.LoginTest">
+                <methods>
+                    <include name="invalidLoginTest"/>
+                    <include name="validLogInTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
